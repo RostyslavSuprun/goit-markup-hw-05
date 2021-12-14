@@ -458,6 +458,9 @@ address {
   margin-right: 30px;
   margin-bottom: 30px;
   flex-basis: calc((100% - 90px) / 3);
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
 }
 .preview:nth-child(3n) {
   margin-right: 0px;
@@ -611,7 +614,9 @@ address {
   fill: #ffffff;
 }
 .footer-link {
-  background: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  transition-property: var(--background-color);
+  transition-duration: 250ms;
 }
 .footer-link:hover svg,
 .footer-link:focus svg {
@@ -619,18 +624,20 @@ address {
 }
 .footer-link:hover,
 .footer-link:focus {
-  background: var(--accent-color);
+  background-color: var(--accent-color);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .preview:hover,
 .project-image:focus > .preview {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 0.25;
 }
 /* =====overlay===== */
 .thumb {
   position: relative;
 }
-.thumb::before {
+/* .thumb::before {
   content: "";
   display: inline-block;
   position: absolute;
@@ -638,9 +645,10 @@ address {
   height: 100%;
   background-color: var(--accent-color);
   opacity: 0.9;
-}
-.img-box {
+} */
+.thumb {
   position: relative;
+  overflow: hidden;
 }
 .img-description {
   font-weight: 700;
@@ -657,9 +665,34 @@ address {
 
   display: inline-block;
   position: absolute;
-  bottom: 4px;
+  bottom: 0px;
   width: 100%;
   height: 70px;
 }
-.preview:hover .project-image::before {
+
+.example-img {
+  display: block;
+}
+.overlay {
+  font-size: 18px;
+  line-height: 1.56em;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  padding: 63px 24px;
+
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  opacity: 0.9;
+  overflow: hidden;
+
+  transition-property: transform;
+  transition-duration: 250ms;
+}
+
+.project-image:hover .overlay {
+  transform: translateY(-294px);
+  transition: cubic-bezier(0.4, 0, 0.2, 1) 0.25;
 }
