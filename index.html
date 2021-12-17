@@ -21,7 +21,7 @@
          <nav class="nav">
             <a class="logo" href="./index.html"><span class="design">Web</span>Studio</a>       
             <ul class="nav list">
-             <li class="nav item"><a class="nav link" href="./index.html" style="color: #2196f3 ;">Студия</a></li>
+             <li class="nav item"><a class="nav link current" href="./index.html" style="color: #2196f3 ;">Студия</a></li>
              <li class="nav item"><a class="nav link" href="./portfolio.html">Портфолио</a></li>
              <li class="nav item"><a class="nav link" href="contacts">Контакты</a></li>
             </ul>
@@ -45,7 +45,7 @@
                 Эффективные решения<br> для вашего бизнеса
             </h1>
             <div class="button div">
-            <button type="button" class="order button">Заказать услугу
+            <button data-modal-open type="button" class="order button">Заказать услугу
             </button>
             </div>
         </section>
@@ -244,6 +244,14 @@
                 </div>
             </div>
         </section>
+        <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, magni!</p>
+                <button type="button" class="close-modal" data-modal-close><svg class="cross">
+                    <use href="./images/cross.svg#icon-cross"></use>
+                </svg></button>
+            </div>
+        </div>
     </main>
     <!-- підвал -->
     <footer class="footer">    
@@ -284,7 +292,7 @@
             </div>
         </div>
             </div>  
-           
     </footer>
+        <script src="./js/modal.js"></script>
 </body>
 </html>
